@@ -130,9 +130,10 @@ public class RNPushNotificationListenerService extends FirebaseMessagingService 
 
         Log.v(LOG_TAG, "sendNotification: " + bundle);
 
-        Application applicationContext = (Application) context.getApplicationContext();
+        // removed by DAVEW because we don't want local notifications when app is in foreground
+        /* Application applicationContext = (Application) context.getApplicationContext();
         RNPushNotificationHelper pushNotificationHelper = new RNPushNotificationHelper(applicationContext);
-        pushNotificationHelper.sendToNotificationCentre(bundle);
+        pushNotificationHelper.sendToNotificationCentre(bundle); */
     }
 
     private boolean isApplicationInForeground() {
